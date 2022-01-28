@@ -1,21 +1,21 @@
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>de.taimos</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>5</version>
-	</parent>
+	
+	<groupId>com.eurotech</groupId>
 	<artifactId>gpsd4java</artifactId>
-	<version>1.11-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>bundle</packaging>
+	
 	<name>GPSd4Java</name>
 	<description>Java Client library for GPSd deamon</description>
+	
 	<prerequisites>
 		<maven>3.0.0</maven>
 	</prerequisites>
 
-	<url>http://taimos.github.com/GPSd4Java/</url>
+	<url>https://github.com/eurotech/GPSd4Java</url>
 	<inceptionYear>2011</inceptionYear>
 
 	<contributors>
@@ -37,18 +37,27 @@
 		<contributor>
 			<name>Martin Nordqvist</name>
 		</contributor>
+		<contributor>
+			<name>Salvatore Coppola</name>
+			<organization>Eurotech S.p.a.</organization>
+		</contributor>
 	</contributors>
+	
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>	
 
 	<dependencies>
 		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20160810</version>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.7</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.7.23</version>
+			<version>1.7.32</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -65,33 +74,16 @@
 	</dependencies>
 
 	<scm>
-		<connection>scm:git:git@github.com:taimos/GPSd4Java.git</connection>
-		<developerConnection>scm:git:git@github.com:taimos/GPSd4Java.git</developerConnection>
-		<url>git@github.com:taimos/GPSd4Java.git</url>
+		<connection>scm:git:git@github.com:eurotech/GPSd4Java.git</connection>
+		<developerConnection>scm:git:git@github.com:eurotech/GPSd4Java.git</developerConnection>
+		<url>git@github.com:eurotech/GPSd4Java.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.6.0</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-					<showDeprecation>true</showDeprecation>
-				</configuration>
-			</plugin>
-			<plugin>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>3.0.2</version>
 				<configuration>
